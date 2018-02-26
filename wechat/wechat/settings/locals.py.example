@@ -1,0 +1,12 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# Created by flytrap
+
+from .settings import *
+
+WECHAT = {
+    'appid': '',
+    'secret': '',
+    'token': ''
+}
