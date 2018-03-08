@@ -11,6 +11,13 @@ from django.conf import settings
 
 class CheckWeChat(GenericViewSet):
     def get(self, request, *args, **kwargs):
+        """
+        验证来自微信服务器的请求
+        :param request:
+        :param args:
+        :param kwargs:
+        :return:
+        """
         signature = request.GET.get('signature', '')
         timestamp = request.GET.get('timestamp', '')
         nonce = request.GET.get('nonce', '')

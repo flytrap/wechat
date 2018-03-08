@@ -20,5 +20,6 @@ from .views import CheckWeChat
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url('^taiga/', include('taiga.urls'), ),
     url('^check$', CheckWeChat.as_view({'get': 'get'}), ),
 ]
