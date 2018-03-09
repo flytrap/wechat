@@ -48,7 +48,8 @@ class TaigaUserSerializer(serializers.Serializer):
             taiga_user.extra = results
             taiga_user.save()
 
-        taiga_user.username = taiga_user.extra.get('full_name', '')
+        username = taiga_user.extra.get('full_name', '') if taiga_user.extra else ''
+        taiga_user.username = username
         self.instance = taiga_user
         return taiga_user
 
