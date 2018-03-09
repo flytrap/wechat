@@ -119,3 +119,5 @@ STATIC_URL = '/static/'
 LOG_ROOT = os.path.join(BASE_DIR, 'logs')
 if not os.path.exists(LOG_ROOT):
     os.mkdir(LOG_ROOT)
+LOG_SQL_TO_FILE = False
+LOG_DB_LEVEL = 'INFO'
