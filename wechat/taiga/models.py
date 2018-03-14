@@ -7,13 +7,13 @@ User = get_user_model()
 
 
 class UserInfo(models.Model):
-    nickname = models.CharField('微信昵称', max_length=64, default='')
-    avatar_url = models.URLField('微信头像链接', max_length=128, default='')
-    country = models.CharField('国家', max_length=32, default='')
-    province = models.CharField('省份', max_length=32, default='')
-    city = models.CharField('城市', max_length=32, default='')
-    gender = models.CharField('性别', max_length=8, default='')
-    language = models.CharField('语言', max_length=32, default='')
+    nickname = models.CharField('微信昵称', max_length=64, default='', null=True, blank=True)
+    avatar_url = models.URLField('微信头像链接', max_length=128, default='', null=True, blank=True)
+    country = models.CharField('国家', max_length=32, default='', null=True, blank=True)
+    province = models.CharField('省份', max_length=32, default='', null=True, blank=True)
+    city = models.CharField('城市', max_length=32, default='', null=True, blank=True)
+    gender = models.CharField('性别', max_length=8, default='', null=True, blank=True)
+    language = models.CharField('语言', max_length=32, default='', null=True, blank=True)
 
     class Meta:
         verbose_name = '微信的userInfo'
