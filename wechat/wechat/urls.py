@@ -16,10 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
+from django.conf import settings
+from rest_framework_swagger.views import get_swagger_view
 from .views import CheckWeChat
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('^taiga/', include('taiga.urls'), ),
+    url('^webhook/', include('webhook.urls'), ),
     url('^check$', CheckWeChat.as_view({'get': 'get'}), ),
 ]
+
+if getattr(settings, 'SHOW_DOCS', False):
+    urlpatterns.append(url('^docs', get_swagger_view('接口文档'), ))

@@ -11,3 +11,6 @@ WECHAT = {
     'secret': '',
     'token': ''
 }
+
+SHOW_DOCS = True  # 显示swagger文档
+TAIGA_KEY = 'test'  # 用于校验taiga请求合法性

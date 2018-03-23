@@ -32,9 +32,8 @@ class TaigaUser(models.Model):
 
     bearer = models.CharField('taiga token', max_length=64, null=True, blank=True)
     related_id = models.CharField('关联id', max_length=256, null=True, blank=True)  # (备用)
-    extra = jsonfield.JSONField('扩展数据')
-
-    # extrat = models
+    extra = jsonfield.JSONField('扩展数据', null=True, blank=True)
+    settings = jsonfield.JSONField('配置数据', null=True, blank=True)
 
     class Meta:
         verbose_name = '微信用户Taiga关联'
